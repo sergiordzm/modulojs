@@ -52,17 +52,23 @@ console.log(length);
 
 // 4
 
-const counterWord = (otherPhrase) => {
-  let splitWord = otherPhrase.split(" ");
-  let short = 0;
+const counterByWord = (myPhrase) => {
+  let splitPhrase = myPhrase.split(" ");
+  let shor = 0;
   let long = 0;
-  for (let i = 0; i < splitWord.length; i++) {
-    let word = splitWord[i];
+  for (let i = 0; i < splitPhrase.length; i++) {
+    let word = splitPhrase[i];
     if (word.length < 5) {
-      short++;
+      shor++;
     } else if (word.length > 5) {
       long++;
     }
   }
-  return [short, long];
+  return {
+    shor: shor,
+    long: long,
+  };
 };
+
+let resultCount = counterByWord(phrase);
+console.log(resultCount);
