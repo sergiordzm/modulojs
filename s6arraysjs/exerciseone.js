@@ -128,6 +128,35 @@ let people = [
   ["Luis", "Hernández", "Torres"],
 ];
 
+const nameArray = (names) => {
+  let arrayNames = [];
+  for (let i = 0; i < names.length; i++) {
+    arrayNames.push(names[i][0]);
+  }
+  return arrayNames;
+};
+
+let resultNames = nameArray(people);
+console.log(resultNames);
+
+const fullNameArray = (fullName) => {
+  let fullNameArray = [];
+  for (let i = 0; i < fullName.length; i++) {
+    fullNameArray.push(fullName[i].join(" "));
+  }
+  return fullNameArray;
+};
+
+let resultFulllName = fullNameArray(people);
+console.log(resultFulllName);
+
+// const nameList = (names) => {
+//   let arrayNewNames = [];
+//   for (let i = 0; i < names.length; i++) {
+//     arrayNewNames.push
+//   }
+// };
+
 /*con el array users:
     1.- Necesito una nueva lista, que contenga únicamente los nombres completos de los usuarios
     2.- Necesito saber la edad promedio de los usuarios
