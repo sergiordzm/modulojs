@@ -77,13 +77,6 @@ const fullNameArray = (fullName) => {
 let resultFulllName = fullNameArray(people);
 console.log(resultFulllName);
 
-// const nameList = (names) => {
-//   let arrayNewNames = [];
-//   for (let i = 0; i < names.length; i++) {
-//     arrayNewNames.push
-//   }
-// };
-
 /*con el array users:
     1.- Necesito una nueva lista, que contenga únicamente los nombres completos de los usuarios
     2.- Necesito saber la edad promedio de los usuarios
