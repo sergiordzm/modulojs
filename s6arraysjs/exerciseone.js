@@ -157,3 +157,91 @@ let users = [
     country: "Chile",
   },
 ];
+
+const namesObjects = (fullNames) => {
+  let fullNamesArray = [];
+  for (let i = 0; i < fullNames.length; i++) {
+    fullNamesArray.push(fullNames[i]["name"]);
+    fullNamesArray.push(fullNames[i]["lastname"]);
+  }
+  return fullNamesArray;
+};
+
+let resultFullNameObjects = namesObjects(users);
+
+console.log(resultFullNameObjects);
+
+const averageAge = (ageUsers) => {
+  let addition = 0;
+  let average = "";
+  for (let i = 0; i < ageUsers.length; i++) {
+    addition += ageUsers[i]["age"];
+    average = addition / ageUsers.length;
+  }
+  return average;
+};
+
+let resultAverage = averageAge(users);
+console.log(resultAverage);
+
+const country = (countryUsers) => {
+  let country = [];
+  for (let i = 0; i < countryUsers.length; i++) {
+    country.push(countryUsers[i]["country"]);
+  }
+  return country;
+};
+
+let resultCountry = country(users);
+console.log(resultCountry);
+
+const hobbie = (hobbierUsers) => {
+  for (let i = 0; i < hobbierUsers.length; i++) {
+    if (hobbierUsers[i][""]) {
+    }
+  }
+};
+
+const filterByHobbie = (dataArray, hobbyToSearch) => {
+  let result = [];
+  for (let i = 0; i < dataArray.length; i++) {
+    let user = dataArray[i];
+    let userHasHobby = user.hobbies.includes(hobbyToSearch);
+    if (userHasHobby) result.push(user);
+  }
+  return result;
+};
+
+let pamboleros = filterByHobbie(users, "correr");
+
+let uniqueSetHobbies = (dataArray) => {
+  let allHobbies = [];
+  for (let i = 0; i < dataArray.length; i++) {
+    let userHobbies = dataArray[i].hobbies;
+    allHobbies = [...allHobbies, ...userHobbies];
+  }
+  uniqueHobbies = new Set([...allHobbies]);
+  return uniqueHobbies;
+};
+
+let resultUniqueHobbies = uniqueSetHobbies(users);
+
+console.log(resultUniqueHobbies);
+
+let user = {
+  name: "Lucía",
+  lastname: "Torres",
+  age: 29,
+  hobbies: ["viajar", "bailar"],
+  country: "Chile",
+};
+
+let scores = {
+  html: 9,
+  css: 9,
+  js: 10,
+};
+
+let spreadedUser = { ...user, ...scores, isRegistered: true, generation: 34 };
+
+console.log(spreadedUser);
